@@ -1,0 +1,48 @@
+plugins {
+    id 'org.springframework.boot' version '2.5.2'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'java'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+repositories {
+    mavenCentral()
+    maven { url "https://maven.vaadin.com/vaadin-addons" }
+}
+
+dependencyManagement {
+    imports {
+        mavenBom 'com.vaadin:vaadin-bom:14.6.3'
+    }
+}
+
+ dependencies {
+     implementation 'org.springframework.boot:spring-boot-starter-web'
+     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+     implementation 'org.xhtmlrenderer:flying-saucer-pdf-itext5:9.0.1'
+     implementation 'com.itextpdf:itextpdf:5.5.10'
+     implementation 'org.apache.pdfbox:pdfbox-tools:2.0.3'
+     implementation 'com.vaadin:vaadin-spring-boot-starter'
+     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf:2.2.2.RELEASE'
+     implementation 'org.springframework.boot:spring-boot-starter-mail'
+//     implementation 'javax.mail:mail:1.5.0-b01'
+     compileOnly 'org.projectlombok:lombok'
+     developmentOnly 'org.springframework.boot:spring-boot-devtools'
+//     runtimeOnly 'com.h2database:h2'
+     implementation 'mysql:mysql-connector-java:8.0.11'
+     annotationProcessor 'org.projectlombok:lombok'
+     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+test {
+    useJUnitPlatform()
+}
