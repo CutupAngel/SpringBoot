@@ -34,7 +34,7 @@ public class MainView extends VerticalLayout {
         this.filter = new TextField();
         this.filter.setWidth(600, Unit.PIXELS);
         Button addNewBtn = new Button("Search", VaadinIcon.SEARCH_PLUS.create());
-        Button printBtn = new Button("Print", VaadinIcon.PRINT.create());
+        Button printBtn = new Button("Show all Devices in Subnet.");
         this.label = new Label("Status of Device");
         this.horizontalLayout.add(verticalLayout1, verticalLayout2);
 
